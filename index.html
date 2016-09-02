@@ -6,16 +6,23 @@
 	<link href="style.css" rel="stylesheet">
 </head>
 <body>
-	<div id = 'TVButtons'></div>
-	
 	<div class = 'container'>
-	<form id = 'TV-form'>
-		<label for = 'newShowInput'>Add your favorite TV show</label>
-		<input type ='text' id = 'newShowInput'><br>
-		<input id = 'addShow' type = 'submit' value = 'Submit'>
-	</form>
-
-	<div class = 'display'></div>
+	<div class = 'row'>
+		<div id = 'TVButtons' class = 'container'></div>
+	</div>
+	
+	<div class = 'row'>
+		<div class = 'col-lg-9'>
+			<div class = 'display'></div>
+		</div>
+		<div class = 'col-lg-3'>
+			<form id = 'TV-form'>
+				<label for = 'newShowInput'>Add your favorite TV show</label>
+				<input type ='text' id = 'newShowInput'><br>
+				<input id = 'addShow' type = 'submit' value = 'Submit'>
+			</form>
+		</div>
+	</div>
 	</div>
 
 <script src="https://code.jquery.com/jquery.js"></script>
