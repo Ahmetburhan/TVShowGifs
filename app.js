@@ -20,22 +20,31 @@ function createButtons(){
 			$.each(currentGif, function(index,value){
 				embedGif= value.images.original.url;
 				paused = value.images.original_still.url;
-				var rating = $('<div>').html('Rating: '+value.rating);
-				var stillGif = $('<img>').attr('src', paused).addClass('playOnHover');
-				$('.display').append(rating, stillGif);
+				var rating = $('<h5>').html('Rating: '+value.rating);
+				var stillGif = $('<img>').attr('src', paused).addClass('playOnHover, btn-warning');
+				var thing = $('<button>').append(rating, stillGif);
+				$('.display').append(thing);
 			});
 		});
 	}); 
 
 	//plays gif on hover *WIP
+	// $(".playOnHover").hover(
+	// 	function(){
+	//        	$(this).attr('src', embedGif);
+	//     },
+	//     function() {
+	//         $(this).attr('src', paused);
+	//     }                       
+	// );  
 	$(".playOnHover").hover(
 		function(){
-	       	$(this).attr('src', embedGif);
+	       	$(this).css('border', 'green');
 	    },
 	    function() {
-	        $(this).attr('src', paused);
+	        $(this).attr('border', 'red');
 	    }                       
-	);  
+	);    	
 }   	 
 
 //sets a button from input

@@ -1,18 +1,23 @@
 img{
-	max-width: 300px;
-	margin: 10px;
+	max-width: 250px;
 }
-
-#TVButtons{
-	margin: 10px;
-	padding: 5px;
-	color: teal;
-}
-
 form{
 	border: solid 1px gray;
-	padding: 20px;
+	padding: 10px;
 }
 input{
 	margin: 10px;
+}
+button{
+	background-color: rgba(255, 255, 255, 0);
+	border: none;
+}
+#TVButtons{
+	margin: 10px;
+}
+.showBtn{
+	color: white;
+	padding: 4px;
+	background-color: gray;
+	margin: 3px;
 }
