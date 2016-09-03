@@ -28,23 +28,15 @@ function createButtons(){
 		});
 	}); 
 
-	//plays gif on hover *WIP
-	// $(".playOnHover").hover(
-	// 	function(){
-	//        	$(this).attr('src', embedGif);
-	//     },
-	//     function() {
-	//         $(this).attr('src', paused);
-	//     }                       
-	// );  
+	plays gif on hover *WIP
 	$(".playOnHover").hover(
 		function(){
-	       	$(this).css('border', 'green');
+	       	$(this).attr('src', embedGif);
 	    },
 	    function() {
-	        $(this).attr('border', 'red');
+	        $(this).attr('src', paused);
 	    }                       
-	);    	
+	);     	
 }   	 
 
 //sets a button from input
