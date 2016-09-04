@@ -1,9 +1,7 @@
-var showTitle = ['The Americans', 'Orphan Black', 'Game of Thrones', 'Sherlock', 'Mr. Robot', 'The Walking Dead', 'Daredevil', 'Unbreakable Kimmy Schmidt', 'Silicon Valley', 'The Flash', 'Supergirl', 'Louie', 'iZombie', 'Homeland', 'Arrow', 'Veep', 'Parks and Recreation'];
-
+var showTitle = ['The Americans', 'Orphan Black', 'Game of Thrones', 'Sherlock', 'Mr. Robot', 'The Walking Dead', 'Daredevil', 'Unbreakable Kimmy Schmidt', 'Silicon Valley', 'The Flash', 'Supergirl', 'Louie', 'iZombie', 'Homeland', 'Arrow', 'Veep', 'Parks and Recreation', 'Bobs Burger'];
 //creates buttons
 function createButtons(){
 	$('#TVButtons').empty();
-	var embedGif; var paused;
 	for(var i = 0; i < showTitle.length; i++){
 		var showBtn = $('<button>').text(showTitle[i]).addClass('showBtn').attr({'data-name': showTitle[i]});
 		$('#TVButtons').append(showBtn);
@@ -18,26 +16,31 @@ function createButtons(){
 		$.ajax({url: giphyURL, method: 'GET'}).done(function(giphy){
 			var currentGif = giphy.data;
 			$.each(currentGif, function(index,value){
-				embedGif= value.images.original.url;
-				paused = value.images.original_still.url;
-				var rating = $('<h5>').html('Rating: '+value.rating);
-				var stillGif = $('<img>').attr('src', paused).addClass('playOnHover, btn-warning');
-				var thing = $('<button>').append(rating, stillGif);
-				$('.display').append(thing);
+				var embedGif= value.images.original.url;
+				var paused = value.images.original_still.url;
+				var thisRating = value.rating;
+				if(thisRating == ''){
+					thisRating = 'unrated';
+				}
+				var rating = $('<h5>').html('Rated: '+thisRating).addClass('ratingStyle');
+				var stillGif = $('<img>').attr('src', paused).addClass('playOnHover');
+				var fullGifDisplay = $('<button>').append(rating, stillGif);
+				$('.display').append(fullGifDisplay);
 			});
-		});
-	}); 
+		});	 
+	});    	
+}  
 
-	plays gif on hover *WIP
-	$(".playOnHover").hover(
-		function(){
-	       	$(this).attr('src', embedGif);
-	    },
-	    function() {
-	        $(this).attr('src', paused);
-	    }                       
-	);     	
-}   	 
+// animates gif on hover *WIP
+$(".playOnHover").hover(
+	function(){
+	   	$(this).attr('src', stillGif);
+	},
+	function() {
+	    $(this).attr('src', paused);
+	}                       
+); 
+ 	 
 
 //sets a button from input
 $('#addShow').on('click', function(){
