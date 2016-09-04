@@ -34,7 +34,7 @@ function createButtons(){
 // animates gif on hover *WIP
 $(".playOnHover").hover(
 	function(){
-	   	$(this).attr('src', stillGif);
+	   	$(this).attr('src', embedGif);
 	},
 	function() {
 	    $(this).attr('src', paused);
