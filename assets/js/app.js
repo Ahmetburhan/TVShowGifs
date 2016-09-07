@@ -27,7 +27,6 @@ function createButtons(){
 				}
 				var rating = $('<h5>').html('Rated: '+thisRating).addClass('ratingStyle');
 				stillGif= $('<img>').attr('data-animated', animatedGif).attr('data-paused', pausedGif).attr('src', pausedGif).addClass('playOnHover');
-				// movingGif = $('<img>').attr('src', animatedGif);
 				var fullGifDisplay = $('<button>').append(rating, stillGif);
 				$('.display').append(fullGifDisplay);
 			});
@@ -36,12 +35,14 @@ function createButtons(){
 }
 
 // //animates and pauses gif on hover
-$(document).on('mouseover','.playOnHover', function(){
-	   	$(this).attr('src', $(this).data('animated'));
-});
-$(document).on('mouseleave','.playOnHover', function(){
-	   	$(this).attr('src', $(this).data('paused'));
-});
+$(document).on({
+	mouseenter: function(){
+	   	$(this).attr('src', $(this).attr('data-animated'));
+},
+  mouseleave: function(){
+	   	$(this).attr('src', $(this).attr('data-paused'));
+}
+}, '.playOnHover');
 
 //sets a button from input
 $('#addShow').on('click', function(){
