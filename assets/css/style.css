@@ -1,42 +1,54 @@
-body{
-	background: url('../images/Charcoal_black_texture_9.jpg');
+body {
+    background: url('Charcoal_black_texture_9.jpg');
 }
-img{
-	max-height: 150px;
+
+img {
+    max-height: 150px;
 }
-form, .showBtn{
-	background-color: #474747;
-	color:white;
+
+form,
+.showBtn {
+    background-color: #474747;
+    color: white;
 }
-form{
-	padding: 10px;
+
+form {
+    padding: 10px;
 }
-#newShowInput{
-	color:black;
+
+#newShowInput {
+    color: black;
 }
-.ratingStyle{
-	color:white;
-	background-color: black;
+
+.ratingStyle {
+    color: white;
+    background-color: black;
 }
-#addShow{
-	background-color: white;
-	color:#474747;
-	border: none;
+
+#addShow {
+    background-color: white;
+    color: #474747;
+    border: none;
 }
-input{
-	margin: 10px;
+
+input {
+    margin: 10px;
 }
-button{
-	background-color: rgba(255, 255, 255, 0);
-	border: none;
+
+button {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
 }
-#TVButtons{
-	margin: 10px;
+
+#TVButtons {
+    margin: 10px;
 }
-.showBtn{
-	padding: 6px;
-	margin: 3px;
+
+.showBtn {
+    padding: 6px;
+    margin: 3px;
 }
-#giphyLogo{
-	margin: 20px;
+
+#giphyLogo {
+    margin: 20px;
 }

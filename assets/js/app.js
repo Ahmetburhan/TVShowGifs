@@ -1,5 +1,5 @@
 var showTitle = ['Orphan Black', 'Game of Thrones', 'Sherlock bbc', 'Mr. Robot', 'The Walking Dead', 'Daredevil', 'Unbreakable Kimmy Schmidt', 'Silicon Valley', 'The Flash', 'Supergirl', 'Louie', 'iZombie', 'Homeland', 'Arrow', 'Veep', 'Parks and Recreation', 'Bobs Burger'];
-var currentGif;var pausedGif; var animatedGif; var stillGif;
+var currentGif; var pausedGif; var animatedGif; var stillGif;
 
 //creates buttons
 function createButtons(){
@@ -8,11 +8,11 @@ function createButtons(){
 		var showBtn = $('<button>').text(showTitle[i]).addClass('showBtn').attr({'data-name': showTitle[i]});
 		$('#TVButtons').append(showBtn);
 	}
-	
+
 	//displays gifs on click
 	$('.showBtn').on('click', function(){
 		$('.display').empty();
-		
+
 		var thisShow = $(this).data('name');
 		var giphyURL = "http://api.giphy.com/v1/gifs/search?q=tv+show+" + thisShow + "&limit=10&api_key=dc6zaTOxFJmzC";
 		$.ajax({url: giphyURL, method: 'GET'}).done(function(giphy){
@@ -31,17 +31,17 @@ function createButtons(){
 				var fullGifDisplay = $('<button>').append(rating, stillGif);
 				$('.display').append(fullGifDisplay);
 			});
-		});	 
-	});    	
-}  
+		});
+	});
+}
 
 // //animates and pauses gif on hover
 $(document).on('mouseover','.playOnHover', function(){
-	   	$(this).attr('src', $(this).data('animated'));                 
-}); 
+	   	$(this).attr('src', $(this).data('animated'));
+});
 $(document).on('mouseleave','.playOnHover', function(){
-	   	$(this).attr('src', $(this).data('paused'));                   
-}); 
+	   	$(this).attr('src', $(this).data('paused'));
+});
 
 //sets a button from input
 $('#addShow').on('click', function(){
