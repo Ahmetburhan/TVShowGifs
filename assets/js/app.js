@@ -34,15 +34,13 @@ function createButtons(){
 	});
 }
 
-// //animates and pauses gif on hover
-$(document).on({
-	mouseenter: function(){
-	   	$(this).attr('src', $(this).attr('data-animated'));
-},
-  mouseleave: function(){
-	   	$(this).attr('src', $(this).attr('data-paused'));
-}
-}, '.playOnHover');
+//animates and pauses gif on hover
+$(document).on('mouseover','.playOnHover', function(){
+ 	   	$(this).attr('src', $(this).data('animated'));
+ });
+ $(document).on('mouseleave','.playOnHover', function(){
+ 	   	$(this).attr('src', $(this).data('paused'));
+ });
 
 //sets a button from input
 $('#addShow').on('click', function(){
